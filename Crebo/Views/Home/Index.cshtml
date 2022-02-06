@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "TIG Crebo";
+}
+
+<div>
+    @using (Ajax.BeginForm("Index", null, new AjaxOptions { UpdateTargetId = "results-grid" }, new { enctype = "multipart/form-data" }))
+    {
+        <div class="card border-primary mb-auto">
+            <div class="card-body text-primary">
+                <h5>Selecteer een CSV bestand</h5>
+                <input type="file" class="form-control-sm" name='csvFile' id="csvFile" />
+            </div>
+            <div class="card-footer bg-light border-primary">
+                <button type="submit" class="btn btn-sm btn-outline-secondary btn-rounded">Overzicht</button>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="results-grid">
+</div>

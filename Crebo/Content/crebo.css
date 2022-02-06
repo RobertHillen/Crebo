@@ -1,0 +1,8 @@
+﻿.crebo-error {
+    color: red;
+    font-weight: bold
+}
+
+.crebo-unknown {
+    color: darkorange !important;
+}

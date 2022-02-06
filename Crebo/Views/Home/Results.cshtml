@@ -1,0 +1,44 @@
+﻿@model Crebo.Models.ResultContentModel
+
+@if (Model.HasError())
+{
+    <label class="crebo-error">@Model.ErrorMessage</label>
+}
+@if (Model.HasData())
+{
+    <table class="table blue table-striped">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Email</th>
+                <th>Crebonummer</th>
+                <th>KwalificatieDossier</th>
+                <th>Kwalificatie</th>
+                <th>Niveau</th>
+                <th>Bron</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model.Data)
+            {
+            <tr class="detail-header-row">
+                <td>@(data.FullName())</td>
+                <td>@(data.Email)</td>
+                @if (data.Niveau > 0)
+                {
+                    <td>@(data.CreboNummer)</td>
+                    <td>@(data.KwalificatieDossier)</td>
+                    <td>@(data.Kwalificatie)</td>
+                    <td>@(data.Niveau)</td>
+                    <td>@(data.Bron)</td>
+                }
+                else
+                {
+                    <td class="crebo-unknown">@(data.CreboNummer)</td>
+                    <td class="crebo-unknown">Onbekend Crebonummer</td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+}

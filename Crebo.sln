@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crebo", "Crebo\Crebo.csproj", "{9119F547-EC6A-4FA7-B992-DF8E3D05B4C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crebo.Business", "Crebo.Business\Crebo.Business.csproj", "{716CFE09-C759-4854-9CAC-73CA8E1062DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crebo.Base", "Crebo.Base\Crebo.Base.csproj", "{C78D44ED-EF81-4F91-AE9B-5B1A78E54FC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9119F547-EC6A-4FA7-B992-DF8E3D05B4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9119F547-EC6A-4FA7-B992-DF8E3D05B4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9119F547-EC6A-4FA7-B992-DF8E3D05B4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9119F547-EC6A-4FA7-B992-DF8E3D05B4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716CFE09-C759-4854-9CAC-73CA8E1062DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716CFE09-C759-4854-9CAC-73CA8E1062DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716CFE09-C759-4854-9CAC-73CA8E1062DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716CFE09-C759-4854-9CAC-73CA8E1062DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78D44ED-EF81-4F91-AE9B-5B1A78E54FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78D44ED-EF81-4F91-AE9B-5B1A78E54FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78D44ED-EF81-4F91-AE9B-5B1A78E54FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78D44ED-EF81-4F91-AE9B-5B1A78E54FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5A219D2-C4FB-41D5-8D6A-1861F627B32A}
+	EndGlobalSection
+EndGlobal
