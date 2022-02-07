@@ -1,4 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Crebo.Base.Helpers;
+using Crebo.Base.Interfaces;
+using SimpleInjector;
+using System.Linq;
 
 namespace Crebo.Business.SimpleInjector
 {
@@ -6,7 +9,9 @@ namespace Crebo.Business.SimpleInjector
     {
         public static void RegisterQueryHandling(this Container container)
         {
-            container.RegisterQueryHandling();
+            var assemblies = ReflectionHelper.GetCreboAssemblies().ToArray();
+
+            container.Register(typeof(IQueryHandler<,>), assemblies, Lifestyle.Scoped);
         }
     }
 }

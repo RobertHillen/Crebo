@@ -4,6 +4,8 @@ using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
 using System.Linq;
 using System.Web.Mvc;
+using Crebo.Business.SimpleInjector;
+using SimpleInjector.Integration.Wcf;
 
 namespace Crebo
 {
@@ -11,11 +13,10 @@ namespace Crebo
     {
         public static void RegisterDependencyContainer(Container container)
         {
-            var assemblies = ReflectionHelper.GetCreboAssemblies().ToArray();
-
-            container.Register(typeof(IQueryHandler<,>), assemblies, Lifestyle.Scoped);
+            container.RegisterQueryHandling();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+            SimpleInjectorServiceHostFactory.SetContainer(container);
         }
     }
 }

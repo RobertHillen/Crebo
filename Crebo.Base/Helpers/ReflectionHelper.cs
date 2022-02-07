@@ -6,21 +6,20 @@ using System.Reflection;
 
 namespace Crebo.Base.Helpers
 {
-    public class ReflectionHelper
+    public static class ReflectionHelper
     {
-        private static readonly Lazy<Assembly[]> _applicationAssemblies = new Lazy<Assembly[]>(() =>
-        {
-            LoadAllBinDirectoryAssemblies();
-
-            return AppDomain.CurrentDomain.GetAssemblies().ToArray();
-        });
-
         public static IEnumerable<Assembly> GetCreboAssemblies()
         {
             return GetApplicationAssemblies()
                 .Where(assembly => assembly.FullName.ToLower().StartsWith("crebo."));
         }
 
+        private static readonly Lazy<Assembly[]> _applicationAssemblies = new Lazy<Assembly[]>(() =>
+        {
+            LoadAllBinDirectoryAssemblies();
+
+            return AppDomain.CurrentDomain.GetAssemblies().ToArray();
+        });
 
         private static IEnumerable<Assembly> GetApplicationAssemblies()
         {
@@ -46,7 +45,7 @@ namespace Crebo.Base.Helpers
                     var isLoaded = AppDomain.CurrentDomain.GetAssemblies().Any(a => a.FullName == assemblyName.FullName);
                     if (!isLoaded)
                     {
-                        var loadedAssembly = Assembly.LoadFile(assemblyFile);
+                        Assembly.Load(assemblyFile);
                     }
                 }
                 catch (FileLoadException)
@@ -62,8 +61,7 @@ namespace Crebo.Base.Helpers
 
         private static bool IsOpenGenericTypeAssignableFrom(Type genericType, Type assignableFrom)
         {
-            return genericType.IsGenericType
-                && assignableFrom.IsAssignableFrom(genericType.GetGenericArguments()[0]);
+            return genericType.IsGenericType && assignableFrom.IsAssignableFrom(genericType.GetGenericArguments()[0]);
         }
     }
 }
